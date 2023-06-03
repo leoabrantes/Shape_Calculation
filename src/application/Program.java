@@ -28,18 +28,20 @@ public class Program {
 
 			System.out.println();
 			System.out.println("Shape number " + (i+1) + ":");
-			System.out.print("Type 'c' for circle or 'r' for rectangle: ");
+			System.out.print("Type 'c' for circle, 'r' for rectangle or t for triangle: ");
 			char type = sc.next().charAt(0);
 
-				while (type != 'c' && type != 'r') {
+				while (type != 'c' && type != 'r' && type != 't') {
 					System.out.println("Error: Type a different letter: ");
-					System.out.print("Type 'c' for circle or 'r' for rectangle: ");
+					System.out.print("Type 'c' for circle, 'r' for rectangle or t for triangle: ");
 					type = sc.next().charAt(0);
 				}
 			
 			System.out.println();
 
 			if (type == 'c') {
+				System.out.print("Type a radius number: ");
+				double r = sc.nextDouble();
 				System.out.print("Type a radius number: ");
 				double r = sc.nextDouble();
 				list.add(new Circle(Color.BLACK, r));
