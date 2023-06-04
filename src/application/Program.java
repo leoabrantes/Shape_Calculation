@@ -24,22 +24,20 @@ public class Program {
 		System.out.print("Type a number: ");
 		int n = sc.nextInt();
 
-		System.out.println();
-		
 		for (int i = 0; i < n; i++) {
-
 			System.out.println();
 			System.out.println("Shape number " + (i+1) + ":");
 			System.out.print("Type 'c' for circle, 'r' for rectangle or 't' for triangle: ");
 			char type = sc.next().charAt(0);
 
+			System.out.println();
+			
 				while (type != 'c' && type != 'r' && type != 't') {
 					System.out.println("Error: Type a different letter: ");
 					System.out.print("Type 'c' for circle, 'r' for rectangle or t for triangle: ");
 					type = sc.next().charAt(0);
 				}
 			
-			System.out.println();
 			sc.nextLine();
 
 			System.out.println("Choose a right color: BLACK, YELLOW or WHITE ");
@@ -48,9 +46,7 @@ public class Program {
 			
 			System.out.println();
 
-				while (colorName != "BLACK" && colorName != "YELLOW" && colorName != "WHITE") {
-					
-					System.out.println(colorName);
+				while (!colorName.equals("BLACK") && !colorName.equals("YELLOW") && !colorName.equals("WHITE")) {
 					System.out.println("Choose a right color: BLACK, YELLOW or WHITE ");
 					System.out.print("Color: ");
 					colorName = sc.nextLine();
@@ -66,7 +62,7 @@ public class Program {
 				list.add(new Circle(color, r));
 				
 				
-			} if (type == 'r') {
+			} else if (type == 'r') {
 
 				System.out.print("Type a width number to calc the area: ");
 				double w = sc.nextDouble();
